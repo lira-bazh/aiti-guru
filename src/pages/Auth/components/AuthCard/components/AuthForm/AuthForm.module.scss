@@ -1,0 +1,13 @@
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  :global(.ant-form-item) {
+    --ant-form-item-margin-bottom: 0;
+
+    :global(.ant-input-outlined) {
+      height: 55px;
+    }
+  }
+}
