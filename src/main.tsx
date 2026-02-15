@@ -14,7 +14,8 @@ createRoot(document.getElementById("root")!).render(
         token: {
           fontFamily: "Inter, sans-serif",
           fontSize: 18,
-          borderRadius: 12
+          borderRadius: 12,
+          colorPrimary: "#242EDB"
         }
       }}
     >

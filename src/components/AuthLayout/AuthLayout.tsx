@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router";
+import { Navigate, Outlet } from "react-router";
 import { Spin } from "antd";
 import { checkAuth } from "@/api";
 import { ROUTES } from "@/constants";
 
-export function AuthLayout() {
+interface AuthLayoutProps {
+  children?: React.ReactNode;
+}
+
+export function AuthLayout({ children }: AuthLayoutProps) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,9 +29,9 @@ export function AuthLayout() {
     return <Spin size="large" fullscreen />;
   }
 
-  return isAuthenticated ? (
-    <Navigate to={ROUTES.products()} />
-  ) : (
-    <Navigate to={ROUTES.auth()} />
-  );
+  if (!isAuthenticated) {
+    return <Navigate to={ROUTES.auth()} replace />;
+  }
+
+  return children ? <>{children}</> : <Outlet />;
 }

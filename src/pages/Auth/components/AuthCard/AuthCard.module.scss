@@ -51,9 +51,19 @@
     flex-grow: 1;
   }
 
+  :global(.ant-divider-inner-text) {
+    color: $grey-7;
+  }
+
   .bottom-text {
     text-align: center;
-    color: #6C6C6C;
+    color: $grey-8;
     font-size: 18px;
+
+    > a {
+      color: $primary-color;
+      text-decoration: underline;
+      font-weight: 600;
+    }
   }
 }

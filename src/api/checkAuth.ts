@@ -33,8 +33,9 @@ export async function checkAuth(): Promise<AuthResponse | null> {
     const data: AuthResponse = await response.json();
     return data;
   } catch (error) {
-    console.error("Check auth error:", error);
+    console.error("Ошибка при проверке авторизации:", error);
     localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
     return null;
   }
 }

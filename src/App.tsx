@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Auth } from "@/pages";
+import { Auth, Products } from "@/pages";
 import { AuthLayout } from "@/components";
 import { ROUTES } from "@/constants";
 
@@ -10,9 +10,10 @@ function App() {
         <Route path={ROUTES.auth()} element={<Auth />} />
 
         <Route element={<AuthLayout />}>
-          <Route path="/" />
-          <Route path={ROUTES.products()} element={<></>} />
+          <Route path={ROUTES.products()} element={<Products />} />
         </Route>
+
+        <Route path="*" element={<div>404 - Страница не найдена</div>} />
       </Routes>
     </BrowserRouter>
   );
