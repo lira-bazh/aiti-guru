@@ -1,0 +1,28 @@
+.name {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+
+  .image {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cairo';
+
+    .title {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .category {
+      font-weight: 400;
+      font-size: 14px;
+      color: $grey-10;
+    }
+  }
+}

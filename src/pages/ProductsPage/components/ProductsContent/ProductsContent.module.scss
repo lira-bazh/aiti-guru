@@ -1,0 +1,11 @@
+.products-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: $product-page-padding-vertical;
+  padding-top: $product-page-padding-vertical;
+  padding-left: $product-page-padding-gorizontal;
+  padding-right: $product-page-padding-gorizontal;
+  background-color: $color-white;
+}

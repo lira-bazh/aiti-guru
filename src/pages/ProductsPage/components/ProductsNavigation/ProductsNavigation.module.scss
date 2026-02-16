@@ -1,0 +1,9 @@
+.products-navigation {
+  height: 105px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  padding-left: $product-page-padding-gorizontal;
+  padding-right: $product-page-padding-gorizontal;
+  background-color: $color-white;
+}

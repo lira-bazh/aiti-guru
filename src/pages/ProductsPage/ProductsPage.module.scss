@@ -1,0 +1,9 @@
+.products-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  padding-top: $product-page-padding-vertical;
+  background-color: $grey-9;
+}

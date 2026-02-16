@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# Тестовое задание для компании Aiti Guru
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Стэк
+* React 19
+* TypeScript
+* Vite
+* Scss
+* CSS modules
+* Redux Toolkit
+* React router 7
+* Ant Design
 
-Currently, two official plugins are available:
+## Дизайн
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Api
 
-## React Compiler
+Как источник данных используется публичный api https://dummyjson.com/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Требования
 
-## Expanding the ESLint configuration
+Форма входа:
+* Валидация полей (обязательность заполнения).
+* Обработка ошибок: если API возвращает ошибку, выводить уведомление или текст ошибки под полями.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Логика запоминания данных для входа:
+* Если чекбокс установлен, нужно сохранять токен авторизации так, чтобы сессия жила после закрытия браузера
+* Если не установлен, то сессия должна сбрасываться при закрытии вкладки
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Вывод списка товаров:
+* Соответствие столбцам из макета Figma
+* Прогресс-бар при подгрузке
+* Подгрузка данных из API.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Сортировка:
+* Возможность сортировки по столбцам (например, по цене или рейтингу).
+* Должно храниться состояние сортировки
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Добавление товара:
+* По нажатию кнопки "Добавить" открывается форма добавления товара с возможностью заполнить основные поля: Наименование, цена, вендор, артикул.
+* При успешном добавлении  показывать базовое Toast уведомление
+* Логику сохранения через API делать при этом не нужно.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Логика интерфейса:
+* Если рейтинг товара ниже 3, значение должно подсвечиваться красным цветом.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Поиск товаров:
+* Использовать API
