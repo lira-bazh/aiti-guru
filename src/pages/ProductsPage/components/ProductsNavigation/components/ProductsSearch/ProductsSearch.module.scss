@@ -1,0 +1,19 @@
+.search {
+  height: 48px;
+
+  background: $grey-14;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+
+  &::placeholder, :global(.ant-input-prefix) {
+    color: $grey-11;
+  }
+
+  &:global(.ant-input-outlined) {
+    &:focus, &:focus-within, &:hover {
+      box-shadow: none;
+      background: $grey-14;
+    }
+  }
+}

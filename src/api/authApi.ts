@@ -62,7 +62,8 @@ export const authApi = createApi({
         },
         body: {
           username,
-          password
+          password,
+          expiresInMins: 0,
         }
       }),
       transformResponse: (

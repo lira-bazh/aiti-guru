@@ -2,6 +2,87 @@
   .brand {
     font-family: 'Open Sans';
     font-weight: 700;
+  }
+
+  .rating {
+    font-family: 'Open Sans';
+
+    :global(.low-rating) {
+      color: $error-color;
+    }
+  }
+
+  .price {
+    font-family: 'Roboto Mono';
+
+    &-decimal {
+      color: $grey-11;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+
+    .btn-plus {
+      width: 52px;
+      height: 27px;
+      border-radius: 23px;
+    }
+
+    .btn-ellipsis {
+      color: $grey-10;
+
+      &:hover {
+        color: $grey-10;
+      }
+    }
+  }
+
+  :global(.ant-table-wrapper) :global(.ant-table) {
+    --ant-table-row-selected-bg: transparent;
+    --ant-table-row-selected-hover-bg: transparent;
     font-size: 16px;
+
+    :global(.ant-table-thead) {
+      --ant-table-header-bg: transparent;
+
+      >tr > th {
+        font-weight: 700;
+        color: $grey-10;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    tr >* {
+      &:not(:nth-child(2)) {
+        text-align: center;
+      }
+    }
+
+    :global(.ant-table-row-selected) {
+      :global(.ant-table-cell):first-child {
+        border-left: 3px solid $lagoon-color;
+      }
+    }
+
+    :global(.ant-checkbox) {
+      --ant-control-interactive-size: 22px;
+
+      &:global(.ant-checkbox-checked) {
+        background-color: $lagoon-color;
+        border-color: $lagoon-color;
+      }
+
+      &:global(.ant-checkbox-indeterminate):after {
+        background-color: $lagoon-color;
+      }
+    }
   }
 }
+

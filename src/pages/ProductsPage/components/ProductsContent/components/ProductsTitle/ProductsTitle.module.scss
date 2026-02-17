@@ -5,11 +5,28 @@
 
   > h2 {
     flex-grow: 1;
+
+    font-weight: 700;
+    font-size: 20px;
+    color: $grey-13;
   }
 
   &-actions {
     display: flex;
     flex-direction: row;
     gap: 8px;
+
+    :global(.ant-btn) {
+      border-radius: 6px;
+    }
+
+    .refresh {
+      height: 42px;
+      width: 42px;
+
+      svg {
+        color: $night-blue;
+      }
+    }
   }
 }

@@ -1,0 +1,24 @@
+.add-button {
+  height: 42px;
+  width: 147px;
+  font-size: 14px;
+  gap: 15px;
+
+  :global(.ant-btn-icon) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.add-modal {
+  :global(.ant-modal-body) {
+    padding: 10px;
+  }
+
+  :global(.ant-input), :global(.ant-input-number), :global(.ant-btn) {
+    border-radius: 6px;
+    height: 40px;
+  }
+}

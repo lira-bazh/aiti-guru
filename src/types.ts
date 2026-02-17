@@ -12,6 +12,6 @@ export interface IProduct {
 }
 
 export interface SortInfo {
-  columnKey?: string | number | null;
+  columnKey?: React.Key | null;
   order?: SortOrder | null;
 }

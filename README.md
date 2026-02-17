@@ -12,6 +12,8 @@
 
 ## Дизайн
 
+<img src="https://github.com/lira-bazh/aiti-guru/blob/master/auth.png" width="350">
+
 ## Api
 
 Как источник данных используется публичный api https://dummyjson.com/

@@ -8,14 +8,14 @@ export const ProductsSearch = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className={styles["search"]}>
-      <Input
-        prefix={<SearchIcon />}
-        allowClear={{ clearIcon: <CloseIcon /> }}
-        onChange={(e) => {
-          dispatch(searchProducts(e.target.value));
-        }}
-      />
-    </div>
+    <Input
+      className={styles["search"]}
+      prefix={<SearchIcon />}
+      allowClear={{ clearIcon: <CloseIcon /> }}
+      onChange={(e) => {
+        dispatch(searchProducts(e.target.value));
+      }}
+      placeholder="Найти"
+    />
   );
 };

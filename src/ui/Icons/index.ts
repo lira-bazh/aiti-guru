@@ -5,3 +5,4 @@ export { SearchIcon } from "./Search";
 export { ArrowsClockwiseIcon } from "./ArrowsClockwise";
 export { PlusCircleIcon } from "./PlusCircle";
 export { PlusIcon } from "./Plus";
+export { EllipsisCircleIcon } from "./EllipsisCircle";

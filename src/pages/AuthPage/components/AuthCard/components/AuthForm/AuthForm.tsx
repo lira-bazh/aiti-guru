@@ -5,8 +5,6 @@ import { useAuthorizeUserMutation } from "@/api/authApi";
 import { ROUTES } from "@/constants";
 import styles from "./AuthForm.module.scss";
 
-
-
 type FieldType = {
   username: string;
   password: string;
@@ -37,10 +35,8 @@ export const AuthForm = () => {
     <>
       {contextHolder}
       <Form
-        name="basic"
         initialValues={{ remember: false }}
         onFinish={onFinish}
-        autoComplete="off"
         className={styles.authForm}
         requiredMark={false}
       >
