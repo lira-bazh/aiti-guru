@@ -1,5 +1,7 @@
 # Тестовое задание для компании Aiti Guru
 
+Посетить: [aiti-guru-dun.vercel.app](https://aiti-guru-dun.vercel.app/)
+
 ## Стэк
 * React 19
 * TypeScript
@@ -12,7 +14,9 @@
 
 ## Дизайн
 
-<img src="https://github.com/lira-bazh/aiti-guru/blob/master/auth.png" width="350">
+<img src="./auth.png" width="350">
+
+<img src="./products.png" width="350">
 
 ## Api
 
@@ -47,3 +51,8 @@
 
 Поиск товаров:
 * Использовать API
+
+## Как запустить?
+    npm install
+    npm run dev
+Запускается по адресу http://localhost:5173
