@@ -10,7 +10,7 @@
 * CSS modules
 * Redux Toolkit
 * React router 7
-* Ant Design
+* Ant Design 6
 
 ## Дизайн
 

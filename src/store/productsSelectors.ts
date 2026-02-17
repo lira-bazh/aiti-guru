@@ -12,3 +12,4 @@ export const selectSkipProducts = (state: RootState) => state.products.skip;
 export const selectDataIsLoading = (state: RootState) => state.products.loading;
 
 export const selectSortedInfo = (state: RootState) => state.products.sortedInfo;
+export const selectSearchText = (state: RootState) => state.products.searchText;

@@ -17,14 +17,15 @@ export const productsApi = createApi({
   endpoints: (builder) => ({
     getProducts: builder.query<GetProductsResponse, { skip?: number; query?: string }>({
       query: ({ skip = 0, query = '' }) => {
-
-        // Формируем URL с параметрами
         const params = new URLSearchParams({
-          q: query,
           skip: String(skip),
           limit: String(PRODUCTS_PORTION),
           select: PRODUCTS_FIELDS.join(","),
         });
+
+        if (query) {
+          params.set("q", query);
+        }
 
         return {
           url: `${query ? ENDPOINTS.seachProducts : ENDPOINTS.products}?${params.toString()}`,
