@@ -1,9 +1,5 @@
 import type { RootState } from ".";
 
-// Базовый селектор
-// const selectProductsSlice = (state: RootState) => state.products;
-
-// Основные селекторы
 export const selectProducts = (state: RootState) => state.products.data;
 
 export const selectTotalProducts = (state: RootState) => state.products.total;

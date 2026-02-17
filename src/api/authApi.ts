@@ -23,6 +23,7 @@ export const authApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: COMMON_URL
   }),
+  tagTypes: ["Auth"],
   endpoints: (builder) => ({
     // Эндпоинт для проверки авторизации
     checkAuth: builder.query<AuthResponse | null, void>({
@@ -46,7 +47,8 @@ export const authApi = createApi({
         return result.data
           ? { data: result.data as AuthResponse }
           : { data: null };
-      }
+      },
+      providesTags: ['Auth']
     }),
 
     // Функция для авторизации
@@ -63,7 +65,7 @@ export const authApi = createApi({
         body: {
           username,
           password,
-          expiresInMins: 0,
+          expiresInMins: 0
         }
       }),
       transformResponse: (
@@ -93,7 +95,8 @@ export const authApi = createApi({
         console.error("Ошибка при авторизации:", errorMessage);
 
         return errorMessage;
-      }
+      },
+      invalidatesTags: ['Auth']
     })
   })
 });

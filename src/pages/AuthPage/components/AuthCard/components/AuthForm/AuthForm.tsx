@@ -20,13 +20,10 @@ export const AuthForm = () => {
     if (values.username && values.password) {
       const result = await authorizeUser(values);
 
-      if (result.data) {
-        navigate(ROUTES.products());
+      if (result) {
+        navigate(ROUTES.main());
       } else {
-        messageApi.open({
-          type: "error",
-          content: result.error as string
-        });
+        messageApi.error(result);
       }
     }
   };

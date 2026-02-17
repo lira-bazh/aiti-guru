@@ -1,6 +1,6 @@
 export const ROUTES = {
+  main: () => "/",
   auth: () => "/auth",
-  products: () => "/products"
 };
 
 export const COMMON_URL = `https://dummyjson.com/`;

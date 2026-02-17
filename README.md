@@ -56,3 +56,7 @@
     npm install
     npm run dev
 Запускается по адресу http://localhost:5173
+
+## Данные для прохождения авторизации
+    emilys
+    emilyspass

@@ -16,15 +16,13 @@ export interface IProductsSlice {
   searchText: string;
 }
 
-export interface ThunkApiConfig {
-  state: RootState;
-  dispatch: AppDispatch;
-}
-
 export const loadPage = createAsyncThunk<
   { products: IProduct[]; total: number; skip: number },
   number,
-  ThunkApiConfig
+  {
+    state: RootState;
+    dispatch: AppDispatch;
+  }
 >(
   "products/loadPage",
   async (pageNumber: number = 1, { dispatch, getState }) => {
@@ -51,7 +49,10 @@ export const loadPage = createAsyncThunk<
 export const searchProducts = createAsyncThunk<
   { products: IProduct[]; total: number; searchText: string },
   string,
-  ThunkApiConfig
+  {
+    state: RootState;
+    dispatch: AppDispatch;
+  }
 >("products/searchProducts", async (query: string, { dispatch, getState }) => {
   const skip = selectSkipProducts(getState()) || 0;
 

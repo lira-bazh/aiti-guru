@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router";
 import { Spin } from "antd";
-import { useCheckAuthQuery } from "@/api/authApi";
 import { ROUTES } from "@/constants";
+import { useCheckAuthQuery } from "@/api/authApi";
 
 interface AuthLayoutProps {
   children?: React.ReactNode;
